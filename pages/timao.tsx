@@ -14,8 +14,17 @@ export default function TimaoPage(props:TimaoProps) {
 // const [get, set] = useState(0);
 const [frase, setFrase] = useState(props.frase);
 const [autor, setAutor] = useState(props.autor);
-
+const [contador, setContador] = useState(0);
 // useEffect(função, array);
+
+useEffect(()=>{
+   console.log('useEffect foi executado');
+   if(contador==0){
+       document.title = "Carregou a página, executou a primeira vez";
+   }else{
+         document.title = "Carregou a página, executou "+ contador +" vezes";
+   }
+},[frase, autor, contador]);
 
   return (
     <>
@@ -23,6 +32,7 @@ const [autor, setAutor] = useState(props.autor);
         {autor && <h2>{autor}</h2>}
         <button onClick={(e)=>{setFrase("Timão é o melhor do mundo!")}}>Mudar a frase</button>
         <button onClick={(e)=>{setAutor("Glaucio Daniel")}}>Mudar o autor</button>
+        <button onClick={()=>{setContador(contador+1)}}>Contador+</button>
     </>
   )
 }
