@@ -14,7 +14,7 @@ import { css} from '@emotion/css';
 import styled from '@emotion/styled';
 import Link from 'next/link';
 import Input from "../Form/Input";
-
+import Button from '../Form/Button';
 //styled-components;
 const HeaderPage = styled.header`
 width: 100%;
@@ -48,15 +48,7 @@ const NavMenu = styled.nav`
 `;
 
 
-const ButtonMenu = styled.button`
-  border: none;
-  border-radius: 10px;
-  height: 30px;
-  margin-left: 5px;
-  color: #333;
-  background: linear-gradient(150deg, #ffeb84 0%, #ffd53e 100%);
-  box-shadow: 0px 2px 5px -1px rgb(59, 59, 59, 0.5);
-`;
+
 
 //Input
 
@@ -95,7 +87,7 @@ export default function Header(props:HeaderProps) {
         <div>
           
           <Input type="text" placeholder="Digite sua busca" />
-          <ButtonMenu>{props.pesquisar?props.pesquisar:"Search"}</ButtonMenu>
+          <Button>{props.pesquisar?props.pesquisar:"Search"}</Button>
 
 
           </div> 
