@@ -13,6 +13,7 @@ import styles from  './Header.module.css';
 import { css} from '@emotion/css';
 import styled from '@emotion/styled';
 import Link from 'next/link';
+import Input from "../Form/Input";
 
 //styled-components;
 const HeaderPage = styled.header`
@@ -46,13 +47,6 @@ const NavMenu = styled.nav`
   }  
 `;
 
-
-const InputMenu = styled.input`
-  border: none;
-  border-radius: 10px;
-  padding: 2px 10px;
-  height: 30px;
-`;
 
 const ButtonMenu = styled.button`
   border: none;
@@ -99,8 +93,11 @@ export default function Header(props:HeaderProps) {
           </ul>
         </NavMenu> 
         <div>
-          <InputMenu type="text" placeholder="Digite sua busca" />
+          
+          <Input type="text" placeholder="Digite sua busca" />
           <ButtonMenu>{props.pesquisar?props.pesquisar:"Search"}</ButtonMenu>
+
+
           </div> 
     </HeaderPage>
   )
