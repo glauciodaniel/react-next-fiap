@@ -1,7 +1,7 @@
 import React, {ButtonHTMLAttributes} from 'react'
 import styled from '@emotion/styled';
 
-const ButtonData = styled.button`
+const ButtonData: React.FC<ButtonUnion> = styled.button`
   border: none;
   border-radius: 10px;
   height: 30px;
